@@ -1,0 +1,113 @@
+﻿<Window x:Class="TigerGames_OrderManagementSystemSS.LoginScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TigerGames_OrderManagementSystemSS"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="LoginScreen"
+        Height="450"
+        Width="700">
+    <Grid ShowGridLines="False">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!--Right Panel-->
+
+        <Rectangle Grid.Column="1"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Stretch"
+                   Fill="#2C666E" />
+
+        <Image Grid.Column="1"
+               Width="200px"
+               Source="/Images/Tiger-Games-Logo.png" />
+
+        <TextBlock Grid.Column="1"
+                   VerticalAlignment="Bottom"
+                   Padding="5px"
+                   HorizontalAlignment="Center"
+                   Foreground="#FFFFFF">
+                   © Copyright Tiger Games 2024
+        </TextBlock>
+
+        <!--Left Panel-->
+        <!--Title-->
+        <TextBlock HorizontalAlignment="Center"
+                   Padding="0px 30px 0px 0px"
+                   FontSize="24px">
+                   Order Management System
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Center"
+                   Padding="0px 60px 0px 0px"
+                   FontSize="24px">
+                   v1.0
+        </TextBlock>
+
+        <StackPanel Grid.Column="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+            <!--Fields-->
+
+            <TextBox x:Name="UsernameTb"
+                     Margin="0px 0px 0px 15px"
+                     Foreground="#000000"
+                     CaretBrush="#000000"
+                     SelectionBrush="#A6A2A2"
+                     Width="200px"
+                     materialDesign:HintAssist.Hint="Username"
+                     Background="#00000000">
+            </TextBox>
+
+            <PasswordBox x:Name="PasswordTb"
+                         Foreground="#000000"
+                         CaretBrush="#000000"
+                         SelectionBrush="#A6A2A2"
+                         Margin="1px 1px 1px 15px"
+                         materialDesign:HintAssist.Hint="Password"
+                         materialDesign:TextFieldAssist.HasClearButton="True" />
+
+            <!--Buttons-->
+
+            <StackPanel Orientation="Horizontal">
+                <Button Width="95px"
+                        x:Name="LoginBtn"
+                        Content="Login"
+                        Margin="5px"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Background="#0A090C"
+                        Foreground="#FFFFFF"
+                        BorderBrush="#0A090C"
+                        Click="LoginBtn_Click" />
+
+                <Button Width="95px"
+                        Content="Clear"
+                        x:Name="ClearBtn"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Background="Transparent"
+                        BorderBrush="#0A090C"
+                        Foreground="#0A090C"
+                        Click="ClearBtn_Click" />
+
+            </StackPanel>
+
+            <!--Create an Account-->
+
+            <TextBlock HorizontalAlignment="Center">
+                       Don't have an account?
+            </TextBlock>
+
+            <TextBlock HorizontalAlignment="Center">
+                       Contact IT!
+            </TextBlock>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

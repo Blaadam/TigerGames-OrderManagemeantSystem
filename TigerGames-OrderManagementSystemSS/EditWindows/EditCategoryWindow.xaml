@@ -1,0 +1,106 @@
+﻿<Window x:Class="TigerGames_OrderManagementSystemSS.EditWindows.EditCategoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TigerGames_OrderManagementSystemSS.EditWindows"
+        mc:Ignorable="d"
+        Title="Add Category"
+        Height="500"
+        Width="300"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Grid ShowGridLines="True">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40px" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="40px" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="130px" />
+            <RowDefinition Height="30px" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20px" />
+            <RowDefinition Height="55px" />
+            <RowDefinition Height="20px" />
+        </Grid.RowDefinitions>
+
+        <!--Row 1 - Company Logo-->
+        <Image x:Name="Logo"
+               Source="/Images/Tiger-Games-Logo.png"
+               Grid.Row="0"
+               Grid.Column="1"
+               Margin="5px" />
+
+        <!--Row 2 - Column Descriptor-->
+        <Label Grid.Column="1"
+               Grid.Row="1"
+               Content="ID: -1"
+               HorizontalAlignment="Center"
+               x:Name="ID_Descriptor"
+               VerticalAlignment="Center" />
+
+        <!--Row 3 - Field Input-->
+        <ScrollViewer Grid.Column="1"
+                      Grid.Row="2">
+
+            <StackPanel Grid.Column="1"
+                        Grid.Row="2"
+                        HorizontalAlignment="Center"
+                        Orientation="Vertical"
+                        Width="200px">
+
+                <TextBox x:Name="Add_CategoryName"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         Foreground="#A6A2A2"
+                         Margin="5"
+                         materialDesign:HintAssist.Hint="Category Name" />
+
+                <TextBox x:Name="Add_CategoryDescription"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         Foreground="#A6A2A2"
+                         Margin="5"
+                         materialDesign:HintAssist.Hint="Category Description"
+                         AcceptsReturn="True"
+                         Height="100px" />
+
+            </StackPanel>
+
+
+        </ScrollViewer>
+
+        <!--Row 5 - Buttons-->
+        <StackPanel Grid.Column="1"
+                    Grid.Row="4"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+
+            <Button x:Name="Add_Order_AddBtn"
+                    Grid.Column="1"
+                    Grid.Row="5"
+                    Margin="0px 0px 5px 0px"
+                    Width="100px"
+                    Content="Edit"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Background="#2c666e"
+                    Foreground="#FFFFFF"
+                    BorderBrush="Transparent"
+                    Click="Add_Order_AddBtn_Click" />
+            <Button x:Name="Add_Order_ClearBtn"
+                    Grid.Column="1"
+                    Grid.Row="6"
+                    Width="100px"
+                    Margin="5px 0px 0px 0px"
+                    Content="Clear"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Background="#07393c"
+                    Foreground="#FFFFFF"
+                    BorderBrush="Transparent"
+                    Click="Add_Order_ClearBtn_Click" />
+
+        </StackPanel>
+
+    </Grid>
+</Window>
