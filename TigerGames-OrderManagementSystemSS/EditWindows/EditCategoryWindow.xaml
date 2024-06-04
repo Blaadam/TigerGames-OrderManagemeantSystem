@@ -87,7 +87,7 @@
                     Background="#2c666e"
                     Foreground="#FFFFFF"
                     BorderBrush="Transparent"
-                    Click="Add_Order_AddBtn_Click" />
+                    Click="Add_Category_AddBtn_Click" />
             <Button x:Name="Add_Order_ClearBtn"
                     Grid.Column="1"
                     Grid.Row="6"
@@ -98,7 +98,7 @@
                     Background="#07393c"
                     Foreground="#FFFFFF"
                     BorderBrush="Transparent"
-                    Click="Add_Order_ClearBtn_Click" />
+                    Click="Add_Category_ClearBtn_Click" />
 
         </StackPanel>
 

@@ -32,7 +32,9 @@
                     Background="#2c666e"
                     Foreground="#FFFFFF"
                     BorderBrush="#07393c"
-                    ToolTip="Resource name: MaterialDesignPaperDarkButton" />
+                    x:Name="CreateBtn"
+                    ToolTip="Resource name: MaterialDesignPaperDarkButton"
+                    Click="CreateBtn_Click" />
 
             <Button Width="100px"
                     Content="Edit"
@@ -42,7 +44,9 @@
                     Background="#07393c"
                     Foreground="#FFFFFF"
                     BorderBrush="#07393c"
-                    ToolTip="Resource name: MaterialDesignPaperDarkButton" />
+                    x:Name="EditBtn"
+                    ToolTip="Resource name: MaterialDesignPaperDarkButton"
+                    Click="EditBtn_Click" />
 
             <Button Width="100px"
                     Content="Delete"
@@ -52,7 +56,9 @@
                     Background="#07393c"
                     Foreground="#FFFFFF"
                     BorderBrush="#07393c"
-                    ToolTip="Resource name: MaterialDesignPaperDarkButton" />
+                    x:Name="DeleteBtn"
+                    ToolTip="Resource name: MaterialDesignPaperDarkButton"
+                    Click="DeleteBtn_Click" />
 
         </StackPanel>
 

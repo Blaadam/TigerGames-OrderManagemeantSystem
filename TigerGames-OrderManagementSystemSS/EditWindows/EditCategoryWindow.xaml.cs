@@ -26,15 +26,20 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
 
         private void Add_Category_ClearBtn_Click(object sender, RoutedEventArgs e)
         {
-            Add_CustomerFirstNameTb.Text = string.Empty;
-            Add_CustomerSurnameNameTb.Text = string.Empty;
-            Add_CustomerHomeNumberTb.Text = string.Empty;
-            Add_CustomerStreetNameTb.Text = string.Empty;
-            Add_CustomerPostCodeTb.Text = string.Empty;
-            Add_CustomerCityTb.Text = string.Empty;
-            Add_CustomerCountyTb.Text = string.Empty;
-            Add_CustomerHomeTelTb.Text = string.Empty;
-            Add_CustomerMobileTb.Text = string.Empty;
+            //Add_CustomerFirstNameTb.Text = string.Empty;
+            //Add_CustomerSurnameNameTb.Text = string.Empty;
+            //Add_CustomerHomeNumberTb.Text = string.Empty;
+            //Add_CustomerStreetNameTb.Text = string.Empty;
+            //Add_CustomerPostCodeTb.Text = string.Empty;
+            //Add_CustomerCityTb.Text = string.Empty;
+            //Add_CustomerCountyTb.Text = string.Empty;
+            //Add_CustomerHomeTelTb.Text = string.Empty;
+            //Add_CustomerMobileTb.Text = string.Empty;
+        }
+
+        private void Add_Category_AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

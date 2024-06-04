@@ -119,7 +119,7 @@
                     HorizontalAlignment="Center"
                     Orientation="Horizontal">
 
-            <Button x:Name="Add_Order_AddBtn"
+            <Button x:Name="Add_Customer_AddBtn"
                     Grid.Column="1"
                     Grid.Row="5"
                     Margin="0px 0px 5px 0px"
@@ -129,8 +129,8 @@
                     Background="#2c666e"
                     Foreground="#FFFFFF"
                     BorderBrush="Transparent"
-                    Click="Add_Order_AddBtn_Click" />
-            <Button x:Name="Add_Order_ClearBtn"
+                    Click="Add_Customer_AddBtn_Click" />
+            <Button x:Name="Add_Customer_ClearBtn"
                     Grid.Column="1"
                     Grid.Row="6"
                     Width="100px"
