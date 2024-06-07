@@ -75,18 +75,8 @@
 
             <!--Buttons-->
 
-            <StackPanel Orientation="Horizontal">
-                <Button Width="95px"
-                        x:Name="LoginBtn"
-                        Content="Login"
-                        Margin="5px"
-                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                        Background="#0A090C"
-                        Foreground="#FFFFFF"
-                        BorderBrush="#0A090C"
-                        Click="LoginBtn_Click" />
-
-                <Button Width="95px"
+            <StackPanel Orientation="Vertical">
+                <Button Width="150px"
                         Content="Clear"
                         x:Name="ClearBtn"
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
@@ -95,6 +85,15 @@
                         Foreground="#0A090C"
                         Click="ClearBtn_Click" />
 
+                <Button Width="150px"
+                        x:Name="LoginBtn"
+                        Content="Login"
+                        Margin="5px"
+                        IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                        Background="#0A090C"
+                        Foreground="#FFFFFF"
+                        BorderBrush="#0A090C"
+                        Click="LoginBtn_Click" />
             </StackPanel>
 
             <!--Create an Account-->
