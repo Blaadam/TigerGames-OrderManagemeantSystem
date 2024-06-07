@@ -5,24 +5,26 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:TigerGames_OrderManagementSystemSS.MainViews"
       mc:Ignorable="d"
-      d:DesignHeight="450"
+      d:DesignHeight="418"
       d:DesignWidth="800"
       Title="DatagridView">
 
     <Grid ShowGridLines="False">
         <Grid.RowDefinitions>
-            <RowDefinition />
+            <RowDefinition Height="322px" />
             <RowDefinition Height="48px" />
         </Grid.RowDefinitions>
 
         <DataGrid x:Name="PageDG"
                   IsReadOnly="True"
                   Background="Transparent"
+                  VerticalAlignment="Stretch"
                   SelectedCellsChanged="Datagrid_SelectedItemsChanged"></DataGrid>
 
         <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
+                    VerticalAlignment="Bottom"
                     Orientation="Horizontal"
+                    Margin="0 0 0 8"
                     Grid.Row="1">
 
             <Button Width="100px"

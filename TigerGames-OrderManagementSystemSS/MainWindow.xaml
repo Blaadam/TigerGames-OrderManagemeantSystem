@@ -81,9 +81,22 @@
 
         </StackPanel>
         
+        <Button Width="77px"
+                x:Name="LogoutButton"
+                Margin="5px"
+                Content="Logout"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                Background="Transparent"
+                BorderBrush="#CFD2CD"
+                Foreground="#000000"
+                HorizontalAlignment="Right"
+                ToolTip="Resource name: MaterialDesignPaperDarkButton"
+                Click="LogoutButton_Click" />
+
         <!--Main Content-->
 
-        <StackPanel Grid.Row="1" x:Name="MainContentFrame" />
+        <StackPanel Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                    x:Name="MainContentFrame"/>
 
     </Grid>
 </Window>

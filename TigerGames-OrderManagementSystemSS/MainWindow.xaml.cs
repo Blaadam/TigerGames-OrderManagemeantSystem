@@ -70,5 +70,17 @@ namespace TigerGames_OrderManagementSystemSS
         {
             LoadPage("Customer");
         }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to logout?", "Tiger Games v1.0", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+            {
+                return;
+            }
+
+            LoginScreen window = new LoginScreen();
+            window.Show();
+            this.Close();
+        }
     }
 }
