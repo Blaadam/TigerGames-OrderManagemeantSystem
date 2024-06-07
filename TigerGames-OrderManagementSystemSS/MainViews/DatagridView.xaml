@@ -16,8 +16,9 @@
         </Grid.RowDefinitions>
 
         <DataGrid x:Name="PageDG"
-                  IsReadOnly="False"
-                  Background="Transparent"></DataGrid>
+                  IsReadOnly="True"
+                  Background="Transparent"
+                  SelectedCellsChanged="Datagrid_SelectedItemsChanged"></DataGrid>
 
         <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Center"

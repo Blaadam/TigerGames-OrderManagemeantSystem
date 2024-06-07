@@ -52,7 +52,7 @@ namespace TigerGames_OrderManagementSystemSS
 
         private void CategoriesBtn_Click(object sender, RoutedEventArgs e)
         {
-            LoadPage("Categories");
+            LoadPage("Category");
         }
 
         private void ProductsBtn_Click(object sender, RoutedEventArgs e)

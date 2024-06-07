@@ -76,21 +76,22 @@ namespace TigerGames_OrderManagementSystemSS.MainViews
             switch (CurrentTable)
             {
                 case "Customer":
-                    new AddCustomersWindow().Show();
+                    new AddCustomersWindow().ShowDialog();
                     break;
                 case "Order":
-                    new AddOrdersWindow().Show();
+                    new AddOrdersWindow().ShowDialog();
                     break;
                 case "Product":
-                    new AddProductsWindow().Show();
+                    new AddProductsWindow().ShowDialog();
                     break;
                 default:
-                    new AddCategoryWindow().Show();
+                    new AddCategoryWindow().ShowDialog();
                     break;
             }
+            GetDataTable(CurrentTable, null);
         }
 
-        private int EntryID;
+        private int EntryID = -1;
 
         private void Datagrid_SelectedItemsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
