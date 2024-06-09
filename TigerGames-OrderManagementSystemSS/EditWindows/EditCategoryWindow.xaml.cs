@@ -19,27 +19,22 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
     /// </summary>
     public partial class EditCategoryWindow : Window
     {
-        public EditCategoryWindow()
+        private int SelectedID;
+        public EditCategoryWindow(int selectedID)
         {
             InitializeComponent();
+            Edit_LabelID.Content = "Customer ID: " + SelectedID.ToString();
+            SelectedID = selectedID;
         }
 
-        private void Add_Category_ClearBtn_Click(object sender, RoutedEventArgs e)
+        private void Edit_Category_ClearBtn_Click(object sender, RoutedEventArgs e)
         {
-            //Add_CustomerFirstNameTb.Text = string.Empty;
-            //Add_CustomerSurnameNameTb.Text = string.Empty;
-            //Add_CustomerHomeNumberTb.Text = string.Empty;
-            //Add_CustomerStreetNameTb.Text = string.Empty;
-            //Add_CustomerPostCodeTb.Text = string.Empty;
-            //Add_CustomerCityTb.Text = string.Empty;
-            //Add_CustomerCountyTb.Text = string.Empty;
-            //Add_CustomerHomeTelTb.Text = string.Empty;
-            //Add_CustomerMobileTb.Text = string.Empty;
+            Edit_CategoryName.Text = string.Empty;
+            Edit_CategoryDescription.Text = string.Empty;
         }
 
-        private void Add_Category_AddBtn_Click(object sender, RoutedEventArgs e)
+        private void Edit_Category_EditBtn_Click(object sender, RoutedEventArgs e)
         {
-
         }
     }
 }

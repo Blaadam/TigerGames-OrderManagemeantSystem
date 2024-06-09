@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:TigerGames_OrderManagementSystemSS"
         mc:Ignorable="d"
         Title="MainWindow"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         Height="450"
         Width="800">
     <Grid ShowGridLines="False">
@@ -36,28 +38,6 @@
                     Click="HomeBtn_Click" />
 
             <Button Width="100px"
-                    Content="Categories"
-                    x:Name="CategoriesBtn"
-                    Margin="5px"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                    Background="#2c666e"
-                    Foreground="#FFFFFF"
-                    BorderBrush="#07393c"
-                    ToolTip="Resource name: MaterialDesignPaperDarkButton"
-                    Click="CategoriesBtn_Click" />
-
-            <Button Width="100px"
-                    Content="Products"
-                    x:Name="ProductsBtn"
-                    Margin="5px"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                    Background="#2c666e"
-                    Foreground="#FFFFFF"
-                    BorderBrush="#07393c"
-                    ToolTip="Resource name: MaterialDesignPaperDarkButton"
-                    Click="ProductsBtn_Click" />
-
-            <Button Width="100px"
                     Content="Orders"
                     x:Name="OrdersBtn"
                     Margin="5px"
@@ -78,6 +58,28 @@
                     BorderBrush="#07393c"
                     ToolTip="Resource name: MaterialDesignPaperDarkButton"
                     Click="CustomersBtn_Click" />
+
+            <Button Width="100px"
+                    Content="Products"
+                    x:Name="ProductsBtn"
+                    Margin="5px"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Background="#2c666e"
+                    Foreground="#FFFFFF"
+                    BorderBrush="#07393c"
+                    ToolTip="Resource name: MaterialDesignPaperDarkButton"
+                    Click="ProductsBtn_Click" />
+
+            <Button Width="100px"
+                    Content="Categories"
+                    x:Name="CategoriesBtn"
+                    Margin="5px"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Background="#2c666e"
+                    Foreground="#FFFFFF"
+                    BorderBrush="#07393c"
+                    ToolTip="Resource name: MaterialDesignPaperDarkButton"
+                    Click="CategoriesBtn_Click" />
 
         </StackPanel>
         

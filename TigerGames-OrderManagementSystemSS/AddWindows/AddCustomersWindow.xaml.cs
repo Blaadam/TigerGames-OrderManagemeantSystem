@@ -84,7 +84,6 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
             MessageBox.Show($"Customer \"{inputFirstName + " " + inputSurname}\" has been created.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Information);
 
             this.Close();
-
         }
     }
 }

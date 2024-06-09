@@ -19,6 +19,7 @@
                   IsReadOnly="True"
                   Background="Transparent"
                   VerticalAlignment="Stretch"
+                  AutoGenerateColumns="False"
                   SelectedCellsChanged="Datagrid_SelectedItemsChanged"></DataGrid>
 
         <StackPanel HorizontalAlignment="Center"

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TigerGames_OrderManagementSystemSS.AddWindows;
 
 namespace TigerGames_OrderManagementSystemSS.EditWindows
 {
@@ -19,26 +20,70 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
     /// </summary>
     public partial class EditCustomersWindow : Window
     {
-        public EditCustomersWindow()
+        private int SelectedID;
+        public EditCustomersWindow(int CustomerID)
         {
             InitializeComponent();
+            SelectedID = CustomerID;
+
+            Edit_LabelID.Content = "Customer ID: " + SelectedID.ToString();
         }
-        private void Add_Customer_ClearBtn_Click(object sender, RoutedEventArgs e)
+        private void Edit_Customer_ClearBtn_Click(object sender, RoutedEventArgs e)
         {
-            //Add_CustomerFirstNameTb.Text = string.Empty;
-            //Add_CustomerSurnameNameTb.Text = string.Empty;
-            //Add_CustomerHomeNumberTb.Text = string.Empty;
-            //Add_CustomerStreetNameTb.Text = string.Empty;
-            //Add_CustomerPostCodeTb.Text = string.Empty;
-            //Add_CustomerCityTb.Text = string.Empty;
-            //Add_CustomerCountyTb.Text = string.Empty;
-            //Add_CustomerHomeTelTb.Text = string.Empty;
-            //Add_CustomerMobileTb.Text = string.Empty;
+            Edit_CustomerFirstName.Text = string.Empty;
+            Edit_CustomerSurname.Text = string.Empty;
+            Edit_CustomerHouseNumber.Text = string.Empty;
+            Edit_CustomerAddress.Text = string.Empty;
+            Edit_CustomerPostCode.Text = string.Empty;
+            Edit_CustomerCity.Text = string.Empty;
+            Edit_CustomerCountry.Text = string.Empty;
+            Edit_CustomerHomeTel.Text = string.Empty;
+            Edit_CustomerMobile.Text = string.Empty;
         }
 
-        private void Add_Customer_AddBtn_Click(object sender, RoutedEventArgs e)
+        private void Edit_Customer_EditBtn_Click(object sender, RoutedEventArgs e)
         {
+            var context = new AW_Tiger_GamesEntities();
 
+            string inputFirstName = Edit_CustomerFirstName.Text.Trim();
+            string inputSurname = Edit_CustomerSurname.Text.Trim();
+            string inputHouseNumber = Edit_CustomerHouseNumber.Text.Trim();
+            string inputStreetName = Edit_CustomerAddress.Text.Trim();
+            string inputPostCode = Edit_CustomerPostCode.Text.Trim();
+            string inputCity = Edit_CustomerCity.Text.Trim();
+            string inputCountry = Edit_CustomerCountry.Text.Trim();
+            string inputHomeTel = Edit_CustomerHomeTel.Text.Trim();
+            string inputMobileNo = Edit_CustomerMobile.Text.Trim();
+
+            if (string.IsNullOrEmpty(inputFirstName) || string.IsNullOrEmpty(inputSurname) || string.IsNullOrEmpty(inputHouseNumber) || string.IsNullOrEmpty(inputStreetName) || string.IsNullOrEmpty(inputPostCode) || string.IsNullOrEmpty(inputCity) || string.IsNullOrEmpty(inputCountry) || string.IsNullOrEmpty(inputHomeTel) || string.IsNullOrEmpty(inputMobileNo) || string.IsNullOrEmpty(inputStreetName))
+            {
+                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            var existingData = context.tblCustomers.Where(c => c.CustomerID == SelectedID).FirstOrDefault();
+
+            if (existingData == null)
+            {
+                MessageBox.Show("This customer does not exist.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            existingData.CustomerFirstName = inputFirstName;
+            existingData.CustomerSurname = inputSurname;
+            existingData.CustomerHouseNumber = Convert.ToInt32(inputHouseNumber);
+            existingData.CustomerAddress = inputStreetName;
+            existingData.CustomerPostcode = inputPostCode;
+            existingData.CustomerCity = inputCity;
+            existingData.CustomerCountry = inputCountry;
+            existingData.CustomerHomeTel = Convert.ToInt32(inputHomeTel);
+            existingData.CustomerMobile = Convert.ToInt32(inputMobileNo);
+
+            context.SaveChanges();
+
+            MessageBox.Show($"Customer \"{inputFirstName + " " + inputSurname}\" has been updated.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            this.Close();
         }
     }
 }

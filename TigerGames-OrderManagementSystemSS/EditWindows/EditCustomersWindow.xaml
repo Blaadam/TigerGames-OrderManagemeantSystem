@@ -35,6 +35,7 @@
         <!--Row 2 - Column Descriptor-->
         <Label Grid.Column="1"
                Grid.Row="1"
+               x:Name="Edit_LabelID"
                Content="Customer Details"
                HorizontalAlignment="Center"
                VerticalAlignment="Center" />
@@ -49,60 +50,60 @@
                         Orientation="Vertical"
                         Width="200px">
 
-                <TextBox x:Name="Add_CustomerFirstName"
+                <TextBox x:Name="Edit_CustomerFirstName"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
                          Margin="5"
                          materialDesign:HintAssist.Hint="Customer FirstName" />
-                <TextBox x:Name="Add_CustomerSurname"
+                <TextBox x:Name="Edit_CustomerSurname"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
                          Margin="5"
                          materialDesign:HintAssist.Hint="Customer Surname" />
-                <TextBox x:Name="Add_CustomerHouseNumber"
+                <TextBox x:Name="Edit_CustomerHouseNumber"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
                          Margin="5"
                          materialDesign:HintAssist.Hint="Customer's House Number" />
 
-                <TextBox x:Name="Add_CustomerAddress"
+                <TextBox x:Name="Edit_CustomerAddress"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
                          Margin="5"
                          materialDesign:HintAssist.Hint="Customer's Address" />
 
-                <TextBox x:Name="Add_CustomerCity"
+                <TextBox x:Name="Edit_CustomerCity"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
                          Margin="5"
                          materialDesign:HintAssist.Hint="Customer's City" />
 
-                <TextBox x:Name="Add_CustomerCountry"
+                <TextBox x:Name="Edit_CustomerCountry"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
                          Margin="5"
                          materialDesign:HintAssist.Hint="Customer's Country" />
 
-                <TextBox x:Name="Add_CustomerPostCode"
+                <TextBox x:Name="Edit_CustomerPostCode"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
                          Margin="5"
                          materialDesign:HintAssist.Hint="Customer's PostCode" />
 
-                <TextBox x:Name="Add_CustomerHomeTel"
+                <TextBox x:Name="Edit_CustomerHomeTel"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
                          Margin="5"
                          materialDesign:HintAssist.Hint="Customer's Home Telephone" />
-                <TextBox x:Name="Add_CustomerMobile"
+                <TextBox x:Name="Edit_CustomerMobile"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
@@ -119,7 +120,7 @@
                     HorizontalAlignment="Center"
                     Orientation="Horizontal">
 
-            <Button x:Name="Add_Customer_AddBtn"
+            <Button x:Name="Edit_Customer_AddBtn"
                     Grid.Column="1"
                     Grid.Row="5"
                     Margin="0px 0px 5px 0px"
@@ -129,8 +130,8 @@
                     Background="#2c666e"
                     Foreground="#FFFFFF"
                     BorderBrush="Transparent"
-                    Click="Add_Customer_AddBtn_Click" />
-            <Button x:Name="Add_Customer_ClearBtn"
+                    Click="Edit_Customer_EditBtn_Click" />
+            <Button x:Name="Edit_Customer_ClearBtn"
                     Grid.Column="1"
                     Grid.Row="6"
                     Width="100px"

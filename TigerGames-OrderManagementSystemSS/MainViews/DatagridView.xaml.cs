@@ -38,21 +38,70 @@ namespace TigerGames_OrderManagementSystemSS.MainViews
         {
             var context = new AW_Tiger_GamesEntities();
             IQueryable queryResult;
+            List<DataGridColumn> columns = new List<DataGridColumn>();
 
             switch (Table)
             {
                 case "Customer":
                     queryResult = context.tblCustomers;
+                    columns.Add(new DataGridTextColumn { Header = "Customer ID", Binding = new Binding("CustomerID") });
+
+                    columns.Add(new DataGridTextColumn { Header = "First Name", Binding = new Binding("CustomerFirstName") });
+                    columns.Add(new DataGridTextColumn { Header = "Surname", Binding = new Binding("CustomerSurname") });
+                    columns.Add(new DataGridTextColumn { Header = "House Number", Binding = new Binding("CustomerHouseNumber") });
+                    columns.Add(new DataGridTextColumn { Header = "Street Name", Binding = new Binding("CustomerAddress") });
+                    columns.Add(new DataGridTextColumn { Header = "City", Binding = new Binding("CustomerCity") });
+                    columns.Add(new DataGridTextColumn { Header = "Country", Binding = new Binding("CustomerCountry") });
+                    columns.Add(new DataGridTextColumn { Header = "PostCode", Binding = new Binding("CustomerPostcode") });
+                    columns.Add(new DataGridTextColumn { Header = "Home Telephone", Binding = new Binding("CustomerHomeTel") });
+                    columns.Add(new DataGridTextColumn { Header = "Mobile Number", Binding = new Binding("CustomerMobile") });
                     break;
                 case "Order":
+                    columns.Add(new DataGridTextColumn { Header = "Order ID", Binding = new Binding("OrderID") });
+
+                    columns.Add(new DataGridTextColumn { Header = "Customer ID", Binding = new Binding("CustomerID") });
+                    columns.Add(new DataGridTextColumn { Header = "Surname", Binding = new Binding("CustomerSurname") });
+
+                    columns.Add(new DataGridTextColumn { Header = "Product ID", Binding = new Binding("ProductID") });
+                    columns.Add(new DataGridTextColumn { Header = "Name", Binding = new Binding("ProductName") });
+                    columns.Add(new DataGridTextColumn { Header = "Quantity", Binding = new Binding("ProductQty") });
+                    columns.Add(new DataGridTextColumn { Header = "Order Status", Binding = new Binding("OrderStatus") });
+
+                    columns.Add(new DataGridTextColumn { Header = "Cost", Binding = new Binding("OrderCost") });
+                    columns.Add(new DataGridTextColumn { Header = "Shipping Cost", Binding = new Binding("OrderShippingCost") });
+                    columns.Add(new DataGridTextColumn { Header = "Final Total", Binding = new Binding("OrderFinalTotal") });
+                    columns.Add(new DataGridTextColumn { Header = "Order Date", Binding = new Binding("OrderDate") });
+
+                    columns.Add(new DataGridTextColumn { Header = "House Number", Binding = new Binding("CustomerHouseNumber") });
+                    columns.Add(new DataGridTextColumn { Header = "Street Name", Binding = new Binding("CustomerAddress") });
+                    columns.Add(new DataGridTextColumn { Header = "City", Binding = new Binding("CustomerCity") });
+                    columns.Add(new DataGridTextColumn { Header = "Country", Binding = new Binding("CustomerCountry") });
+                    columns.Add(new DataGridTextColumn { Header = "PostCode", Binding = new Binding("CustomerPostcode") });
                     queryResult = context.tblOrders;
                     break;
                 case "Product":
+                    columns.Add(new DataGridTextColumn { Header = "Product ID", Binding = new Binding("ProductID") });
+                    columns.Add(new DataGridTextColumn { Header = "Name", Binding = new Binding("ProductName") });
+                    columns.Add(new DataGridTextColumn { Header = "Serial Number", Binding = new Binding("ProductSerialNumber") });
+                    columns.Add(new DataGridTextColumn { Header = "Category", Binding = new Binding("ProductCategory") });
+                    columns.Add(new DataGridTextColumn { Header = "In Stock", Binding = new Binding("InStock") }) ;
+                    columns.Add(new DataGridTextColumn { Header = "Quantity", Binding = new Binding("ProductQuantity") });
+
+                    columns.Add(new DataGridTextColumn { Header = "Description", Binding = new Binding("ProductDescription"), MaxWidth = 300 });
+                    columns.Add(new DataGridTextColumn { Header = "Size", Binding = new Binding("ProductSize") });
+                    columns.Add(new DataGridTextColumn { Header = "Retail Cost", Binding = new Binding("ProductRetailCost") });
+                    columns.Add(new DataGridTextColumn { Header = "Wholesale Cost", Binding = new Binding("ProductWholesaleCost") });
                     queryResult = context.tblProducts;
                     break;
-                default:
+                case "Category":
+                    columns.Add(new DataGridTextColumn { Header = "CategoryID", Binding = new Binding("CategoryID") });
+                    columns.Add(new DataGridTextColumn { Header = "Name", Binding = new Binding("CategoryName") });
+                    columns.Add(new DataGridTextColumn { Header = "Description", Binding = new Binding("CategoryDescription"), MaxWidth = 300 });
                     queryResult = context.tblCategories;
                     break;
+                default:
+                    MessageBox.Show($"Table {Table} does not exist in the current context.", "Tiger Games v1.0");
+                    return;
             }
 
             if (queryResult == null)
@@ -62,7 +111,14 @@ namespace TigerGames_OrderManagementSystemSS.MainViews
 
             try
             {
-                IEnumerable result = await queryResult.ToListAsync();
+                var result = await queryResult.ToListAsync();
+
+                PageDG.Columns.Clear();
+                foreach (var column in columns)
+                {
+                    PageDG.Columns.Add(column);
+                }
+
                 PageDG.ItemsSource = result;
             }
             catch (Exception ex)
