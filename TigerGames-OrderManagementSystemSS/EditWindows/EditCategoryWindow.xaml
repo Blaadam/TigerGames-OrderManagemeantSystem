@@ -9,7 +9,7 @@
         Height="500"
         Width="300"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
-    <Grid ShowGridLines="True">
+    <Grid ShowGridLines="False">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40px" />

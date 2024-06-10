@@ -21,12 +21,24 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
     public partial class EditCustomersWindow : Window
     {
         private int SelectedID;
-        public EditCustomersWindow(int CustomerID)
+        public EditCustomersWindow(int EntryID)
         {
             InitializeComponent();
-            SelectedID = CustomerID;
+            SelectedID = EntryID;
 
             Edit_LabelID.Content = "Customer ID: " + SelectedID.ToString();
+
+            var context = new AW_Tiger_GamesEntities();
+            var existingData = context.tblCustomers.Where(c => c.CustomerID == SelectedID).FirstOrDefault();
+            Edit_CustomerFirstName.Text = string.Empty;
+            Edit_CustomerSurname.Text = string.Empty;
+            Edit_CustomerHouseNumber.Text = string.Empty;
+            Edit_CustomerAddress.Text = string.Empty;
+            Edit_CustomerPostCode.Text = string.Empty;
+            Edit_CustomerCity.Text = string.Empty;
+            Edit_CustomerCountry.Text = string.Empty;
+            Edit_CustomerHomeTel.Text = string.Empty;
+            Edit_CustomerMobile.Text = string.Empty;
         }
         private void Edit_Customer_ClearBtn_Click(object sender, RoutedEventArgs e)
         {

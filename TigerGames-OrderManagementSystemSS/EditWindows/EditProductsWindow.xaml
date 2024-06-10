@@ -1,14 +1,23 @@
-﻿<Window x:Class="TigerGames_OrderManagementSystemSS.EditWindows.EditCustomersWindow"
+﻿<Window x:Class="TigerGames_OrderManagementSystemSS.EditWindows.EditProductsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TigerGames_OrderManagementSystemSS.EditWindows"
         mc:Ignorable="d"
-        Title="AddOrdersWindow"
+        Title="Edit Products"
+        WindowStartupLocation="CenterScreen"
         Height="600"
         Width="300"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns:system="clr-namespace:System;assembly=mscorlib">
     <Grid ShowGridLines="False">
 
         <Grid.ColumnDefinitions>
@@ -36,7 +45,7 @@
         <Label Grid.Column="1"
                Grid.Row="1"
                x:Name="Edit_LabelID"
-               Content="Customer Details"
+               Content="Product Details"
                HorizontalAlignment="Center"
                VerticalAlignment="Center" />
 
@@ -50,65 +59,61 @@
                         Orientation="Vertical"
                         Width="200px">
 
-                <TextBox x:Name="Edit_CustomerFirstName"
+                <TextBox x:Name="Edit_Productname"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
                          Margin="5"
-                         materialDesign:HintAssist.Hint="Customer FirstName" />
-                <TextBox x:Name="Edit_CustomerSurname"
+                         materialDesign:HintAssist.Hint="Product Name" />
+                <TextBox x:Name="Edit_ProductDescription"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
                          Margin="5"
-                         materialDesign:HintAssist.Hint="Customer Surname" />
-                <TextBox x:Name="Edit_CustomerHouseNumber"
+                         AcceptsReturn="True"
+                         Height="100px"
+                         materialDesign:HintAssist.Hint="Product Description" />
+                <TextBox x:Name="Edit_ProductCategory"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
                          Margin="5"
-                         materialDesign:HintAssist.Hint="Customer's House Number" />
+                         materialDesign:HintAssist.Hint="Product Category" />
+                <TextBox x:Name="Edit_ProductSize"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         Foreground="#A6A2A2"
+                         Margin="5"
+                         materialDesign:HintAssist.Hint="Product Size" />
+                <TextBox x:Name="Edit_ProductRetailCost"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         Foreground="#A6A2A2"
+                         Margin="5"
+                         materialDesign:HintAssist.Hint="Product Retail Cost" />
+                <TextBox x:Name="Edit_ProductWholesaleCost"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         Foreground="#A6A2A2"
+                         Margin="5"
+                         materialDesign:HintAssist.Hint="Product Wholesale Cost" />
 
-                <TextBox x:Name="Edit_CustomerAddress"
-                         Grid.Row="1"
-                         Grid.Column="1"
-                         Foreground="#A6A2A2"
-                         Margin="5"
-                         materialDesign:HintAssist.Hint="Customer's Address" />
+                <CheckBox x:Name="Edit_ProductInStock"
+                          IsChecked="False"
+                          Content="In Stock" />
 
-                <TextBox x:Name="Edit_CustomerCity"
+                <TextBox x:Name="Edit_ProductQuantity"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
                          Margin="5"
-                         materialDesign:HintAssist.Hint="Customer's City" />
-
-                <TextBox x:Name="Edit_CustomerCountry"
+                         materialDesign:HintAssist.Hint="Product Quantity" />
+                <TextBox x:Name="Edit_ProductSerialNumber"
                          Grid.Row="1"
                          Grid.Column="1"
                          Foreground="#A6A2A2"
                          Margin="5"
-                         materialDesign:HintAssist.Hint="Customer's Country" />
-
-                <TextBox x:Name="Edit_CustomerPostCode"
-                         Grid.Row="1"
-                         Grid.Column="1"
-                         Foreground="#A6A2A2"
-                         Margin="5"
-                         materialDesign:HintAssist.Hint="Customer's PostCode" />
-
-                <TextBox x:Name="Edit_CustomerHomeTel"
-                         Grid.Row="1"
-                         Grid.Column="1"
-                         Foreground="#A6A2A2"
-                         Margin="5"
-                         materialDesign:HintAssist.Hint="Customer's Home Telephone" />
-                <TextBox x:Name="Edit_CustomerMobile"
-                         Grid.Row="1"
-                         Grid.Column="1"
-                         Foreground="#A6A2A2"
-                         Margin="5"
-                         materialDesign:HintAssist.Hint="Customer's Mobile Phone" />
+                         materialDesign:HintAssist.Hint="Product Serial Number" />
             </StackPanel>
 
 
@@ -120,7 +125,7 @@
                     HorizontalAlignment="Center"
                     Orientation="Horizontal">
 
-            <Button x:Name="Edit_Customer_AddBtn"
+            <Button x:Name="Edit_Category_EditBtn"
                     Grid.Column="1"
                     Grid.Row="5"
                     Margin="0px 0px 5px 0px"
@@ -130,8 +135,8 @@
                     Background="#2c666e"
                     Foreground="#FFFFFF"
                     BorderBrush="Transparent"
-                    Click="Edit_Customer_EditBtn_Click" />
-            <Button x:Name="Edit_Customer_ClearBtn"
+                    Click="Edit_Category_EditBtn_Click" />
+            <Button x:Name="Edit_Product_ClearBtn"
                     Grid.Column="1"
                     Grid.Row="6"
                     Width="100px"
@@ -139,12 +144,11 @@
                     Content="Clear"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                     Background="#07393c"
+                    Click="Edit_Product_ClearBtn_Click"
                     Foreground="#FFFFFF"
                     BorderBrush="Transparent" />
 
         </StackPanel>
-
-
 
     </Grid>
 </Window>

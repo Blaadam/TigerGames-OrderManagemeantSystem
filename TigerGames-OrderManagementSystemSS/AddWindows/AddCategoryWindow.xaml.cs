@@ -28,8 +28,8 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
         {
             var context = new AW_Tiger_GamesEntities();
 
-            string inputCategoryName = Add_CategoryName.Text;
-            string inputCategoryDesc = Add_CategoryDescription.Text;
+            string inputCategoryName = Add_CategoryName.Text.Trim();
+            string inputCategoryDesc = Add_CategoryDescription.Text.Trim();
 
             var selectedCategory = context.tblCategories.Where(c => c.CategoryName == inputCategoryName).FirstOrDefault();
 
@@ -39,8 +39,8 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
                 return;
             }
             tblCategory newCategory = new tblCategory();
-            newCategory.CategoryName = inputCategoryName.Trim();
-            newCategory.CategoryDescription = inputCategoryDesc.Trim();
+            newCategory.CategoryName = inputCategoryName;
+            newCategory.CategoryDescription = inputCategoryDesc;
 
             context.tblCategories.Add(newCategory);
             context.SaveChanges();

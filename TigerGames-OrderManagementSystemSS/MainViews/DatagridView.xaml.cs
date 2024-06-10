@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TigerGames_OrderManagementSystemSS.AddWindows;
+using TigerGames_OrderManagementSystemSS.EditWindows;
 
 namespace TigerGames_OrderManagementSystemSS.MainViews
 {
@@ -84,7 +85,7 @@ namespace TigerGames_OrderManagementSystemSS.MainViews
                     columns.Add(new DataGridTextColumn { Header = "Name", Binding = new Binding("ProductName") });
                     columns.Add(new DataGridTextColumn { Header = "Serial Number", Binding = new Binding("ProductSerialNumber") });
                     columns.Add(new DataGridTextColumn { Header = "Category", Binding = new Binding("ProductCategory") });
-                    columns.Add(new DataGridTextColumn { Header = "In Stock", Binding = new Binding("InStock") }) ;
+                    columns.Add(new DataGridCheckBoxColumn { Header = "In Stock", Binding = new Binding("InStock") }) ;
                     columns.Add(new DataGridTextColumn { Header = "Quantity", Binding = new Binding("ProductQuantity") });
 
                     columns.Add(new DataGridTextColumn { Header = "Description", Binding = new Binding("ProductDescription"), MaxWidth = 300 });
@@ -180,12 +181,38 @@ namespace TigerGames_OrderManagementSystemSS.MainViews
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (EntryID == -1)
+            {
+                MessageBox.Show("You need to select a row before you can continue.", "Tiger Games v1.0");
+                return;
+            }
+            switch (CurrentTable)
+            {
+                case "Customer":
+                    new EditCustomersWindow(EntryID).ShowDialog();
+                    break;
+                case "Order":
+                    new EditOrdersWindow(EntryID).ShowDialog();
+                    break;
+                case "Product":
+                    new EditProductsWindow(EntryID).ShowDialog();
+                    break;
+                default:
+                    new EditCategoryWindow(EntryID).ShowDialog();
+                    break;
+            }
+            GetDataTable(CurrentTable, null);
         }
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show($"Are you sure you want to remove CategoryID: {EntryID} from the Database?", "Remove Category", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+            if (EntryID == -1)
+            {
+                MessageBox.Show("You need to select a row before you can continue.", "Tiger Games v1.0");
+                return;
+            }
+
+            if (MessageBox.Show($"Are you sure you want to remove CategoryID: {EntryID} from the {CurrentTable} Database?", "Remove Category", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
             {
                 return;
             }
