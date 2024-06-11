@@ -19,13 +19,22 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
             <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="30px" />
         </Grid.RowDefinitions>
 
         <Image Grid.Row="0"
                Source="/Images/Tiger-Games-Logo.png" />
 
-        <ProgressBar Grid.Row="1"
+        <Label Grid.Row="1"
+               Content="Tiger Games v1.0 - Order Management System"
+               FontSize="30px"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Foreground="White"
+               BorderBrush="Black" />
+
+        <ProgressBar Grid.Row="2"
                      x:Name="LoadingProgressBar"
                      Height="5px"
                      IsIndeterminate="True"
@@ -34,7 +43,7 @@
                      BorderThickness="0px"
                      materialDesign:TransitionAssist.DisableTransitions="True" />
 
-        <Label Grid.Row="2"
+        <Label Grid.Row="3"
                Content="© Copyright Tiger Games 2024"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
