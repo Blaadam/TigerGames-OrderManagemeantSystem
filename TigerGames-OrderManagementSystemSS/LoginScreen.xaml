@@ -32,6 +32,18 @@
         <TextBlock Grid.Column="1"
                    VerticalAlignment="Bottom"
                    Padding="5px"
+                   TextWrapping="WrapWithOverflow"
+                   Margin="0px 0px 0px 75px"
+                   MaxWidth="400px"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Foreground="#FFFFFF">
+                Unauthorised access is not permitted to the application. All unauthorised access should be immediately terminated or face disciplinary action.
+        </TextBlock>
+
+        <TextBlock Grid.Column="1"
+                   VerticalAlignment="Bottom"
+                   Padding="5px"
                    HorizontalAlignment="Center"
                    Foreground="#FFFFFF">
                    © Copyright Tiger Games 2024

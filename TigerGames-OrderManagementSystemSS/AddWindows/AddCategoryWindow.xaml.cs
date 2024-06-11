@@ -31,6 +31,12 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
             string inputCategoryName = Add_CategoryName.Text.Trim();
             string inputCategoryDesc = Add_CategoryDescription.Text.Trim();
 
+            if (string.IsNullOrEmpty(inputCategoryName) || string.IsNullOrEmpty(inputCategoryDesc))
+            {
+                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             var selectedCategory = context.tblCategories.Where(c => c.CategoryName == inputCategoryName).FirstOrDefault();
 
             if (selectedCategory != null)
