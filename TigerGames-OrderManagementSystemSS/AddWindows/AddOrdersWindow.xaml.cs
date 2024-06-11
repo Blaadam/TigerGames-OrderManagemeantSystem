@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -41,13 +42,21 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
             string inputCost = Add_OrderCost.Text.Trim();
             string inputShippingCost = Add_OrderShippingCost.Text.Trim();
             string inputFinalTotal = Add_OrderFinalTotal.Text.Trim();
-            string inputStatus = Add_OrderStatus.Text.Trim();
 
-            if (string.IsNullOrEmpty(inputCustomerID) || string.IsNullOrEmpty(inputCustomerSurname) || string.IsNullOrEmpty(inputHouseNumber) || string.IsNullOrEmpty(inputAddress) || string.IsNullOrEmpty(inputPostCode) || string.IsNullOrEmpty(inputCity) || string.IsNullOrEmpty(inputCountry) || string.IsNullOrEmpty(inputProductID) || string.IsNullOrEmpty(inputProductName) || string.IsNullOrEmpty(inputQuantity) || string.IsNullOrEmpty(inputCost) || string.IsNullOrEmpty(inputShippingCost) || string.IsNullOrEmpty(inputFinalTotal) || string.IsNullOrEmpty(inputStatus))
+            if (string.IsNullOrEmpty(inputCustomerID) || string.IsNullOrEmpty(inputCustomerSurname) || string.IsNullOrEmpty(inputHouseNumber) || string.IsNullOrEmpty(inputAddress) || string.IsNullOrEmpty(inputPostCode) || string.IsNullOrEmpty(inputCity) || string.IsNullOrEmpty(inputCountry) || string.IsNullOrEmpty(inputProductID) || string.IsNullOrEmpty(inputProductName) || string.IsNullOrEmpty(inputQuantity) || string.IsNullOrEmpty(inputCost) || string.IsNullOrEmpty(inputShippingCost) || string.IsNullOrEmpty(inputFinalTotal))
             {
                 MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0 - Add Orders", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+
+            if (Add_OrderStatus.SelectedItem == null)
+            {
+                MessageBox.Show("You cannot leave the order status field empty.", "Tiger Games v1.0 - Add Orders");
+                return;
+            }
+
+            var inputStatusObject = (ComboBoxItem)Add_OrderStatus.SelectedItem;
+            string inputStatus = inputStatusObject.Content.ToString();
 
             var selectedUser = context.tblCustomers.Where(o => o.CustomerID.ToString() == inputCustomerID).FirstOrDefault();
 

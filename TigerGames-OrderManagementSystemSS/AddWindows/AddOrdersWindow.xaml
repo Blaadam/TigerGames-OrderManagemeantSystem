@@ -48,9 +48,8 @@
 
             <StackPanel Grid.Column="1"
                         Grid.Row="2"
-                        HorizontalAlignment="Center"
-                        Orientation="Vertical"
-                        Width="200px">
+                        HorizontalAlignment="Stretch"
+                        Orientation="Vertical">
 
                 <TextBox x:Name="Add_OrderCustomerID"
                          Grid.Row="1"
@@ -135,16 +134,23 @@
                             IsTodayHighlighted="True"
                             SelectedDate="{x:Static system:DateTime.Now}"
                             Style="{StaticResource MaterialDesignDatePicker}"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Center"
+                            Margin="5"
                             ToolTip="Click the calendar to select a date" />
 
-
-
-                <TextBox x:Name="Add_OrderStatus"
-                         Grid.Row="1"
-                         Grid.Column="1"
-                         Foreground="#A6A2A2"
-                         Margin="5"
-                         materialDesign:HintAssist.Hint="Order Status" />
+                <ComboBox Name="Add_OrderStatus"
+                          Grid.Row="1"
+                          Grid.Column="1"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Center"
+                          materialDesign:HintAssist.Hint="Order Status"
+                          Margin="5">
+                    <ComboBoxItem Content="Pending" />
+                    <ComboBoxItem Content="Shipping" />
+                    <ComboBoxItem Content="Dispatched" />
+                    <ComboBoxItem Content="Delivered" />
+                </ComboBox>
             </StackPanel>
 
 

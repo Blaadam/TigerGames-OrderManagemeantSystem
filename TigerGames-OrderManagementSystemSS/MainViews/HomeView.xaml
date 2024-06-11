@@ -1,7 +1,7 @@
 ﻿<Page x:Class="TigerGames_OrderManagementSystemSS.MainViews.HomeView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:TigerGames_OrderManagementSystemSS.MainViews"
       mc:Ignorable="d"
@@ -18,6 +18,192 @@
       FontFamily="{DynamicResource MaterialDesignFont}">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <Image Source="/Images/Tiger-Games-Logo.png"
+               HorizontalAlignment="Stretch"
+               VerticalAlignment="Center" />
+
+        <ScrollViewer Grid.Column="1"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      MaxHeight="340px"
+                      CanContentScroll="True">
+            <StackPanel Grid.Column="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                <!--Orders-->
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap"
+                           Background="#F0EDEE"
+                           FontSize="15">
+                    Handling Orders
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Orders Tab allows Staff Members to create, read, update, or delete information in relation to any order placement.
+                    Initially by clicking on the tab, you will be presented with a list of data relating to the tab that you have selected, accompanied by three buttons. Delewte, Edit and Create.
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Delete Button allows you to delete data. This can be done by selecting a row within the DataGrid, it will be coloured in a slightly darker colour,
+                    and then the delete option will be available for you to use. Upon deleting a row/data entry, it will automatically update with the most up-to-date information.
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Edit Button allows you to modify data that has been inputted into the Tiger Games system. This works similarly to the delete button where you need to select a row.
+                    Upon selecting a row, you will be able to utilise the edit button which will open the order information in a new window and allow the user to customise inputted information.
+                    If you wish to save changes, you can press the Edit Button at the bottom of the window to confirm your changes.
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Create Button allows you to create and input data into the Tiger Games system. To utilise this function, you do not need to have a row selected. Upon clicking the button,
+                    a new window will open that prompts you to input information into the system.
+                </TextBlock>
+                <!--Customers-->
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap"
+                           Background="#F0EDEE"
+                           FontSize="15">
+                    Handling Customers
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Customers Tab allows Staff Members to create, read, update, or delete information in relation to any customer.
+                    Initially by clicking on the tab, you will be presented with a list of data relating to the tab that you have selected, accompanied by three buttons. Delewte, Edit and Create.
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Delete Button allows you to delete data. This can be done by selecting a row within the DataGrid, it will be coloured in a slightly darker colour,
+                    and then the delete option will be available for you to use. Upon deleting a row/data entry, it will automatically update with the most up-to-date information.
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Edit Button allows you to modify data that has been inputted into the Tiger Games system. This works similarly to the delete button where you need to select a row.
+                    Upon selecting a row, you will be able to utilise the edit button which will open the customer information in a new window and allow the user to customise inputted information.
+                    If you wish to save changes, you can press the Edit Button at the bottom of the window to confirm your changes.
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Create Button allows you to create and input data into the Tiger Games system. To utilise this function, you do not need to have a row selected. Upon clicking the button,
+                    a new window will open that prompts you to input information into the system.
+                </TextBlock>
+                <!--Products-->
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap"
+                           Background="#F0EDEE"
+                           FontSize="15">
+                    Handling Products
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Products Tab allows Staff Members to create, read, update, or delete information in relation to any product.
+                    Initially by clicking on the tab, you will be presented with a list of data relating to the tab that you have selected, accompanied by three buttons. Delewte, Edit and Create.
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Delete Button allows you to delete data. This can be done by selecting a row within the DataGrid, it will be coloured in a slightly darker colour,
+                    and then the delete option will be available for you to use. Upon deleting a row/data entry, it will automatically update with the most up-to-date information.
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Edit Button allows you to modify data that has been inputted into the Tiger Games system. This works similarly to the delete button where you need to select a row.
+                    Upon selecting a row, you will be able to utilise the edit button which will open the product information in a new window and allow the user to customise inputted information.
+                    If you wish to save changes, you can press the Edit Button at the bottom of the window to confirm your changes.
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Create Button allows you to create and input data into the Tiger Games system. To utilise this function, you do not need to have a row selected. Upon clicking the button,
+                    a new window will open that prompts you to input information into the system.
+                </TextBlock>
+                <!--Categories-->
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap"
+                           Background="#F0EDEE"
+                           FontSize="15">
+                    Handling Categories
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Categories Tab allows Staff Members to create, read, update, or delete information in relation to any order placement.
+                    Initially by clicking on the tab, you will be presented with a list of data relating to the tab that you have selected, accompanied by three buttons. Delewte, Edit and Create.
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Delete Button allows you to delete data. This can be done by selecting a row within the DataGrid, it will be coloured in a slightly darker colour,
+                    and then the delete option will be available for you to use. Upon deleting a row/data entry, it will automatically update with the most up-to-date information.
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Edit Button allows you to modify data that has been inputted into the Tiger Games system. This works similarly to the delete button where you need to select a row.
+                    Upon selecting a row, you will be able to utilise the edit button which will open the categories information in a new window and allow the user to customise inputted information.
+                    If you wish to save changes, you can press the Edit Button at the bottom of the window to confirm your changes.
+                </TextBlock>
+
+                <TextBlock Grid.Column="1"
+                           Margin="10"
+                           TextAlignment="Left"
+                           TextWrapping="Wrap">
+                    The Create Button allows you to create and input data into the Tiger Games system. To utilise this function, you do not need to have a row selected. Upon clicking the button,
+                    a new window will open that prompts you to input information into the system.
+                </TextBlock>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
