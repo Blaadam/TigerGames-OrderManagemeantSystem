@@ -33,7 +33,7 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
 
             if (string.IsNullOrEmpty(inputCategoryName) || string.IsNullOrEmpty(inputCategoryDesc))
             {
-                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0 - Add Category", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -41,7 +41,7 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
 
             if (selectedCategory != null)
             {
-                MessageBox.Show("This Category already Exists.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("This Category already Exists.", "Tiger Games v1.0 - Add Category", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             tblCategory newCategory = new tblCategory();
@@ -51,7 +51,7 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
             context.tblCategories.Add(newCategory);
             context.SaveChanges();
 
-            MessageBox.Show("This Category has been Created", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("This Category has been Created", "Tiger Games v1.0 - Add Category", MessageBoxButton.OK, MessageBoxImage.Information);
 
             this.Close();
         }

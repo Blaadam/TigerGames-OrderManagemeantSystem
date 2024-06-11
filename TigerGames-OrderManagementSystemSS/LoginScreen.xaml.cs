@@ -45,11 +45,11 @@ namespace TigerGames_OrderManagementSystemSS
 
             if (userData == null || userData.Password != inputtedPassword)
             {
-                MessageBox.Show("Incorrect Login Credentials", "Tiger Games v1.0");
+                MessageBox.Show("Incorrect Login Credentials", "Tiger Games v1.0 - Login Attempt");
                 return;
             }
 
-            MessageBox.Show($"Welcome, {inputtedUsername}", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show($"Welcome, {inputtedUsername}", "Tiger Games v1.0 - Login", MessageBoxButton.OK, MessageBoxImage.Information);
 
             MainWindow window = new MainWindow();
             this.Close();
@@ -58,7 +58,7 @@ namespace TigerGames_OrderManagementSystemSS
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("If you would like to create an account to use the Stock Management System, contact the Tiger Games IT Team.", "Tiger Games v1.0");
+            MessageBox.Show("If you would like to create an account to use the Stock Management System, contact the Tiger Games IT Team.", "Tiger Games v1.0 - Registration");
         }
     }
 }

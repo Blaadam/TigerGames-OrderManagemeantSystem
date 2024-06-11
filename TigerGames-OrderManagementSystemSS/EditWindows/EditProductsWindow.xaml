@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:TigerGames_OrderManagementSystemSS.EditWindows"
         mc:Ignorable="d"
         Title="Edit Products"
+        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Height="600"
         Width="300"
