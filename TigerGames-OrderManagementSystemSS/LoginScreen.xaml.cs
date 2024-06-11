@@ -55,5 +55,10 @@ namespace TigerGames_OrderManagementSystemSS
             this.Close();
             window.ShowDialog();
         }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("If you would like to create an account to use the Stock Management System, contact the Tiger Games IT Team.", "Tiger Games v1.0");
+        }
     }
 }

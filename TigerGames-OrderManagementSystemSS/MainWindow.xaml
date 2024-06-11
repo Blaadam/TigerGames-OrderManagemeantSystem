@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TigerGames_OrderManagementSystemSS"
         mc:Ignorable="d"
-        Title="MainWindow"
+        Title="Tiger Games v1.0 - Main Window"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Height="450"
@@ -100,5 +100,11 @@
         <StackPanel Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
                     x:Name="MainContentFrame"/>
 
+        <Label Grid.Row="1"
+               Content="© Copyright Tiger Games 2024"
+               Margin="10"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Bottom"
+               Foreground="Black" />
     </Grid>
 </Window>

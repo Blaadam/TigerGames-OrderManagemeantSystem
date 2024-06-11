@@ -22,8 +22,6 @@ namespace TigerGames_OrderManagementSystemSS
     /// </summary>
     public partial class MainWindow : Window
     {
-        int LastPageIndex = -1;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -34,32 +32,31 @@ namespace TigerGames_OrderManagementSystemSS
             DatagridView page = new DatagridView(TableName);
 
             var Content = page.Content;
-
             page.Content = null;
 
-            if (LastPageIndex != -1)
-            {
-                MainContentFrame.Children.RemoveAt(LastPageIndex);
-            }
-
-            LastPageIndex = MainContentFrame.Children.Add(Content as UIElement);
+            MainContentFrame.Children.Clear();
+            MainContentFrame.Children.Add(Content as UIElement);
         }
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to logout?", "Tiger Games v1.0", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+            if (MessageBox.Show("Would you like to leave the application?", "Tiger Games v1.0", MessageBoxButton.YesNo) == MessageBoxResult.No)
             {
-                return;
+                LoginScreen window = new LoginScreen();
+                window.Show();
             }
-
-            LoginScreen window = new LoginScreen();
-            window.Show();
             this.Close();
         }
 
         private void HomeBtn_Click(object sender, RoutedEventArgs e)
         {
+            HomeView page = new HomeView();
+            var Content = page.Content;
 
+            page.Content = null;
+
+            MainContentFrame.Children.Clear();
+            MainContentFrame.Children.Add(Content as UIElement);
         }
 
         private void CategoriesBtn_Click(object sender, RoutedEventArgs e)

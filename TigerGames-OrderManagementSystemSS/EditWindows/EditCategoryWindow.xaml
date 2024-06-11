@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TigerGames_OrderManagementSystemSS.EditWindows"
         mc:Ignorable="d"
-        Title="Edit Category"
+        Title="Tiger Games v1.0 - Edit Category"
         Height="500"
         Width="300"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">

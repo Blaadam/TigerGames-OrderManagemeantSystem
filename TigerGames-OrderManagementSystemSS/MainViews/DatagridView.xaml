@@ -37,16 +37,16 @@
                     Grid.Row="1">
 
             <Button Width="100px"
-                    Content="Create"
+                    Content="Delete"
                     Padding="5px"
                     Margin="0px 0px 5px 0px"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                    Background="#2c666e"
+                    Background="#8E4040"
                     Foreground="#FFFFFF"
-                    BorderBrush="#07393c"
-                    x:Name="CreateBtn"
+                    BorderBrush="#8E4040"
+                    x:Name="DeleteBtn"
                     ToolTip="Resource name: MaterialDesignPaperDarkButton"
-                    Click="CreateBtn_Click" />
+                    Click="DeleteBtn_Click" />
 
             <Button Width="100px"
                     Content="Edit"
@@ -61,18 +61,17 @@
                     Click="EditBtn_Click" />
 
             <Button Width="100px"
-                    Content="Delete"
+                    Content="Create"
                     Padding="5px"
                     Margin="0px 0px 5px 0px"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                    Background="#07393c"
+                    Background="#2c666e"
                     Foreground="#FFFFFF"
                     BorderBrush="#07393c"
-                    x:Name="DeleteBtn"
+                    x:Name="CreateBtn"
                     ToolTip="Resource name: MaterialDesignPaperDarkButton"
-                    Click="DeleteBtn_Click" />
+                    Click="CreateBtn_Click" />
 
         </StackPanel>
-
     </Grid>
 </Page>

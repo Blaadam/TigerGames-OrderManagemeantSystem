@@ -126,6 +126,7 @@ namespace TigerGames_OrderManagementSystemSS.MainViews
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
+            context.Dispose();
         }
 
         private void CreateBtn_Click(object sender, RoutedEventArgs e)
@@ -247,6 +248,7 @@ namespace TigerGames_OrderManagementSystemSS.MainViews
             }
 
             context.SaveChanges();
+            context.Dispose();
 
             MessageBox.Show($"CategoryID: {EntryID} has been deleted from the Database.");
             GetDataTable(CurrentTable, null);

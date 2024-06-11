@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TigerGames_OrderManagementSystemSS.AddWindows"
         mc:Ignorable="d"
-        Title="Add Category"
+        Title="Tiger Games v1.0 - Create Category"
         WindowStartupLocation="CenterScreen"
         Height="500"
         Width="300"

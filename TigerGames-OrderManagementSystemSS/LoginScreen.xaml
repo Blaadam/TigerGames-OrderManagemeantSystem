@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TigerGames_OrderManagementSystemSS"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="LoginScreen"
+        Title="Tiger Games v1.0 - Login"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Height="450"
@@ -54,16 +54,23 @@
         <TextBlock HorizontalAlignment="Center"
                    Padding="0px 30px 0px 0px"
                    FontSize="24px">
-                   Order Management System
+                   Tiger Games
         </TextBlock>
 
         <TextBlock HorizontalAlignment="Center"
                    Padding="0px 60px 0px 0px"
                    FontSize="24px">
+                   Order Management System
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Center"
+                   Padding="0px 90px 0px 0px"
+                   FontSize="18px">
                    v1.0
         </TextBlock>
 
         <StackPanel Grid.Column="0"
+                    Margin="0 45 0 0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
 
@@ -113,11 +120,9 @@
             <!--Create an Account-->
 
             <TextBlock HorizontalAlignment="Center">
+                <Hyperlink Click="Hyperlink_Click">
                        Don't have an account?
-            </TextBlock>
-
-            <TextBlock HorizontalAlignment="Center">
-                       Contact IT!
+                </Hyperlink>
             </TextBlock>
 
         </StackPanel>

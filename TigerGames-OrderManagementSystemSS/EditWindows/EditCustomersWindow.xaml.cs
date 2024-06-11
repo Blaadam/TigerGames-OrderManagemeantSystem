@@ -30,15 +30,15 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
 
             var context = new AW_Tiger_GamesEntities();
             var existingData = context.tblCustomers.Where(c => c.CustomerID == SelectedID).FirstOrDefault();
-            Edit_CustomerFirstName.Text = string.Empty;
-            Edit_CustomerSurname.Text = string.Empty;
-            Edit_CustomerHouseNumber.Text = string.Empty;
-            Edit_CustomerAddress.Text = string.Empty;
-            Edit_CustomerPostCode.Text = string.Empty;
-            Edit_CustomerCity.Text = string.Empty;
-            Edit_CustomerCountry.Text = string.Empty;
-            Edit_CustomerHomeTel.Text = string.Empty;
-            Edit_CustomerMobile.Text = string.Empty;
+            Edit_CustomerFirstName.Text = existingData.CustomerFirstName;
+            Edit_CustomerSurname.Text = existingData.CustomerSurname;
+            Edit_CustomerHouseNumber.Text = existingData.CustomerHouseNumber.ToString();
+            Edit_CustomerAddress.Text = existingData.CustomerAddress;
+            Edit_CustomerPostCode.Text = existingData.CustomerPostcode;
+            Edit_CustomerCity.Text = existingData.CustomerCity;
+            Edit_CustomerCountry.Text = existingData.CustomerCountry;
+            Edit_CustomerHomeTel.Text = existingData.CustomerHomeTel.ToString();
+            Edit_CustomerMobile.Text = existingData.CustomerMobile.ToString();
         }
         private void Edit_Customer_ClearBtn_Click(object sender, RoutedEventArgs e)
         {
