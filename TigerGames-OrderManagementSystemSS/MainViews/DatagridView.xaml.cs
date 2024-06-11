@@ -184,7 +184,7 @@ namespace TigerGames_OrderManagementSystemSS.MainViews
         {
             if (EntryID == -1)
             {
-                MessageBox.Show("You need to select a row before you can continue.", "Tiger Games v1.0");
+                MessageBox.Show("You need to select a row before you can continue.", $"Tiger Games v1.0 - {CurrentTable} View");
                 return;
             }
             switch (CurrentTable)
@@ -209,7 +209,7 @@ namespace TigerGames_OrderManagementSystemSS.MainViews
         {
             if (EntryID == -1)
             {
-                MessageBox.Show("You need to select a row before you can continue.", "Tiger Games v1.0");
+                MessageBox.Show("You need to select a row before you can continue.", $"Tiger Games v1.0 - {CurrentTable} View");
                 return;
             }
 

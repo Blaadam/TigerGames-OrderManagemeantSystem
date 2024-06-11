@@ -53,7 +53,7 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
 
             if (string.IsNullOrEmpty(inputFirstName) || string.IsNullOrEmpty(inputSurname) || string.IsNullOrEmpty(inputHouseNumber) || string.IsNullOrEmpty(inputStreetName) || string.IsNullOrEmpty(inputPostCode) || string.IsNullOrEmpty(inputCity) || string.IsNullOrEmpty(inputCountry) || string.IsNullOrEmpty(inputHomeTel) || string.IsNullOrEmpty(inputMobileNo) || string.IsNullOrEmpty(inputStreetName))
             {
-                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0 - Add Customers", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -63,7 +63,7 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
 
             if (selectedCategory != null)
             {
-                MessageBox.Show("This Customer already Exists.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("This Customer already Exists.", "Tiger Games v1.0 - Add Customers", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -81,7 +81,7 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
             context.tblCustomers.Add(newCustomer);
             context.SaveChanges();
 
-            MessageBox.Show($"Customer \"{inputFirstName + " " + inputSurname}\" has been created.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show($"Customer \"{inputFirstName + " " + inputSurname}\" has been created.", "Tiger Games v1.0 - Add Custoemers", MessageBoxButton.OK, MessageBoxImage.Information);
 
             this.Close();
         }

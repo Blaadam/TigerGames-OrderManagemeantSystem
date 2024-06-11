@@ -67,17 +67,17 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
 
             if (string.IsNullOrEmpty(inputProductName) || string.IsNullOrEmpty(inputProductDesc) || string.IsNullOrEmpty(inputCategory) || string.IsNullOrEmpty(inputProductSize) || string.IsNullOrEmpty(inputRetailCost) || string.IsNullOrEmpty(inputWholesaleCost) || string.IsNullOrEmpty(inputProductQuantity) || string.IsNullOrEmpty(inputSerialNumber))
             {
-                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0 - Edit Product", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
             var existingData = context.tblProducts.Where(c => c.ProductID == SelectedID).FirstOrDefault();
             if (existingData == null)
             {
-                MessageBox.Show("This customer does not exist.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("This customer does not exist.", "Tiger Games v1.0 - Edit Product", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-
+             
             existingData.ProductName = inputProductName;
             existingData.ProductDescription = inputProductDesc;
             existingData.ProductCategory = inputCategory;
@@ -91,7 +91,7 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
 
             context.SaveChanges();
 
-            MessageBox.Show($"Product \"{inputProductName}\" has been updated.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show($"Product \"{inputProductName}\" has been updated.", "Tiger Games v1.0 - Edit Product", MessageBoxButton.OK, MessageBoxImage.Information);
 
             this.Close();
         }

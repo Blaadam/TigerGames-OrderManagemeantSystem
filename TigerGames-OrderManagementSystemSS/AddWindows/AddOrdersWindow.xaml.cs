@@ -45,7 +45,7 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
 
             if (string.IsNullOrEmpty(inputCustomerID) || string.IsNullOrEmpty(inputCustomerSurname) || string.IsNullOrEmpty(inputHouseNumber) || string.IsNullOrEmpty(inputAddress) || string.IsNullOrEmpty(inputPostCode) || string.IsNullOrEmpty(inputCity) || string.IsNullOrEmpty(inputCountry) || string.IsNullOrEmpty(inputProductID) || string.IsNullOrEmpty(inputProductName) || string.IsNullOrEmpty(inputQuantity) || string.IsNullOrEmpty(inputCost) || string.IsNullOrEmpty(inputShippingCost) || string.IsNullOrEmpty(inputFinalTotal) || string.IsNullOrEmpty(inputStatus))
             {
-                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0 - Add Orders", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -54,7 +54,7 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
 
             if (selectedUser == null)
             {
-                MessageBox.Show("This CustomerID does not exist", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("This CustomerID does not exist", "Tiger Games v1.0 - Add Orders", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -62,7 +62,7 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
 
             if (selectedProduct == null)
             {
-                MessageBox.Show("This ProductID does not exist", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("This ProductID does not exist", "Tiger Games v1.0 - Add Orders", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -71,8 +71,8 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
             newOrder.CustomerSurname = inputProductName;
             newOrder.CustomerHouseNumber = Convert.ToInt32(inputHouseNumber);
             newOrder.CustomerAddress = inputAddress;
-            newOrder.CustomerPostcode = inputPostCode;
             newOrder.CustomerCity = inputCity;
+            newOrder.CustomerCountry = inputCountry;
             newOrder.CustomerPostcode = inputPostCode;
             newOrder.ProductID = Convert.ToInt32(inputProductID);
             newOrder.ProductName = inputProductName;
@@ -80,6 +80,7 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
             newOrder.OrderCost = Convert.ToDecimal(inputCost);
             newOrder.OrderShippingCost = Convert.ToDecimal(inputShippingCost);
             newOrder.OrderFinalTotal = Convert.ToDecimal(inputFinalTotal);
+            newOrder.OrderDate = Add_OrderDate.SelectedDate.Value.Date;
             newOrder.OrderStatus = inputStatus;
 
             context.tblOrders.Add(newOrder);

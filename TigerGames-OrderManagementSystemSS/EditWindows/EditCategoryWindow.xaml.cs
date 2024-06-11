@@ -23,7 +23,7 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
         public EditCategoryWindow(int EntryID)
         {
             InitializeComponent();
-            Edit_LabelID.Content = "Customer ID: " + SelectedID.ToString();
+            Edit_LabelID.Content = "Category ID: " + SelectedID.ToString();
             SelectedID = EntryID;
 
             var context = new AW_Tiger_GamesEntities();
@@ -47,7 +47,7 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
 
             if (string.IsNullOrEmpty(inputCategoryName) || string.IsNullOrEmpty(inputCategoryDesc))
             {
-                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0 - Edit Category", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -55,7 +55,7 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
 
             if (existingData == null)
             {
-                MessageBox.Show("This customer does not exist.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("This customer does not exist.", "Tiger Games v1.0 - Edit Category", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -64,7 +64,7 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
 
             context.SaveChanges();
 
-            MessageBox.Show($"Category \"{inputCategoryName}\" has been updated.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show($"Category \"{inputCategoryName}\" has been updated.", "Tiger Games v1.0 - Edit Category", MessageBoxButton.OK, MessageBoxImage.Information);
 
             this.Close();
         }

@@ -76,11 +76,23 @@
                     Grid.Row="4"
                     HorizontalAlignment="Center"
                     Orientation="Horizontal">
+            
+            <Button x:Name="Add_Order_ClearBtn"
+                    Grid.Column="1"
+                    Grid.Row="6"
+                    Width="100px"
+                    Margin="0px 0px 5px 0px"
+                    Content="Clear"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                    Background="#07393c"
+                    Foreground="#FFFFFF"
+                    BorderBrush="Transparent"
+                    Click="Add_Order_ClearBtn_Click" />
 
             <Button x:Name="Add_Category_AddBtn"
                     Grid.Column="1"
                     Grid.Row="5"
-                    Margin="0px 0px 5px 0px"
+                    Margin="5px 0px 0px 0px"
                     Width="100px"
                     Content="Add"
                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
@@ -88,17 +100,6 @@
                     Foreground="#FFFFFF"
                     BorderBrush="Transparent"
                     Click="Add_Category_AddBtn_Click" />
-            <Button x:Name="Add_Order_ClearBtn"
-                    Grid.Column="1"
-                    Grid.Row="6"
-                    Width="100px"
-                    Margin="5px 0px 0px 0px"
-                    Content="Clear"
-                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
-                    Background="#07393c"
-                    Foreground="#FFFFFF"
-                    BorderBrush="Transparent"
-                    Click="Add_Order_ClearBtn_Click" />
 
         </StackPanel>
 

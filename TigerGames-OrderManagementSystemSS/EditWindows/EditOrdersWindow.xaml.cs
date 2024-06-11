@@ -26,7 +26,7 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
             InitializeComponent();
             SelectedID = EntryID;
 
-            Edit_LabelID.Content = "Product ID: " + SelectedID.ToString();
+            Edit_LabelID.Content = "Order ID: " + SelectedID.ToString();
 
             var context = new AW_Tiger_GamesEntities();
             var existingData = context.tblOrders.Where(c => c.OrderID == SelectedID).FirstOrDefault();
@@ -43,6 +43,7 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
             Edit_OrderCost.Text = existingData.OrderCost.ToString();
             Edit_OrderShippingCost.Text = existingData.OrderShippingCost.ToString();
             Edit_OrderFinalTotal.Text = existingData.OrderFinalTotal.ToString();
+            Edit_OrderDate.SelectedDate = existingData.OrderDate;
             Edit_OrderStatus.Text = existingData.OrderStatus;
         }
 
@@ -85,11 +86,18 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
 
             if (string.IsNullOrEmpty(inputCustomerID) || string.IsNullOrEmpty(inputCustomerSurname) || string.IsNullOrEmpty(inputHouseNumber) || string.IsNullOrEmpty(inputEditress) || string.IsNullOrEmpty(inputPostCode) || string.IsNullOrEmpty(inputCity) || string.IsNullOrEmpty(inputCountry) || string.IsNullOrEmpty(inputProductID) || string.IsNullOrEmpty(inputProductName) || string.IsNullOrEmpty(inputQuantity) || string.IsNullOrEmpty(inputCost) || string.IsNullOrEmpty(inputShippingCost) || string.IsNullOrEmpty(inputFinalTotal) || string.IsNullOrEmpty(inputStatus))
             {
-                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("One or more field(s) are empty.", "Tiger Games v1.0 - Edit Orders", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
             var existingData = context.tblOrders.Where(c => c.OrderID == SelectedID).FirstOrDefault();
+
+            if (existingData == null)
+            {
+                MessageBox.Show("This order does not exist.", "Tiger Games v1.0 - Edit Orders", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             existingData.CustomerID = Convert.ToInt32(inputCustomerID);
             existingData.CustomerSurname = inputCustomerSurname;
             existingData.CustomerHouseNumber = Convert.ToInt32(inputHouseNumber);
@@ -103,7 +111,15 @@ namespace TigerGames_OrderManagementSystemSS.EditWindows
             existingData.OrderCost = Convert.ToDecimal(inputCost);
             existingData.OrderShippingCost = Convert.ToDecimal(inputShippingCost);
             existingData.OrderFinalTotal = Convert.ToDecimal(inputFinalTotal);
+            existingData.OrderDate = Edit_OrderDate.SelectedDate.Value.Date;
             existingData.OrderStatus = inputStatus;
+
+            context.SaveChanges();
+            context.Dispose();
+
+            MessageBox.Show($"Order \"{inputProductName}\" has been updated.", "Tiger Games v1.0 - Edit Orders", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            this.Close();
         }
     }
 }

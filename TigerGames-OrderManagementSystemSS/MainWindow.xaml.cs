@@ -40,7 +40,7 @@ namespace TigerGames_OrderManagementSystemSS
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Would you like to leave the application?", "Tiger Games v1.0", MessageBoxButton.YesNo) == MessageBoxResult.No)
+            if (MessageBox.Show("Would you like to leave the application?", "Tiger Games v1.0 - Logout", MessageBoxButton.YesNo) == MessageBoxResult.No)
             {
                 LoginScreen window = new LoginScreen();
                 window.Show();
