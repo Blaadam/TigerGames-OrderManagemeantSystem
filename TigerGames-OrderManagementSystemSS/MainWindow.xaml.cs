@@ -25,6 +25,18 @@ namespace TigerGames_OrderManagementSystemSS
         public MainWindow()
         {
             InitializeComponent();
+            LoadHomepage();
+        }
+
+        private void LoadHomepage()
+        {
+            HomeView page = new HomeView();
+            var Content = page.Content;
+
+            page.Content = null;
+
+            MainContentFrame.Children.Clear();
+            MainContentFrame.Children.Add(Content as UIElement);
         }
 
         private void LoadPage(string TableName)
@@ -50,13 +62,7 @@ namespace TigerGames_OrderManagementSystemSS
 
         private void HomeBtn_Click(object sender, RoutedEventArgs e)
         {
-            HomeView page = new HomeView();
-            var Content = page.Content;
-
-            page.Content = null;
-
-            MainContentFrame.Children.Clear();
-            MainContentFrame.Children.Add(Content as UIElement);
+            LoadHomepage();
         }
 
         private void CategoriesBtn_Click(object sender, RoutedEventArgs e)
