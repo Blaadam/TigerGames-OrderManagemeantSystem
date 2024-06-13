@@ -70,7 +70,7 @@ namespace TigerGames_OrderManagementSystemSS.AddWindows
             tblCustomer newCustomer = new tblCustomer();
             newCustomer.CustomerFirstName = inputFirstName;
             newCustomer.CustomerSurname = inputSurname;
-            newCustomer.CustomerHouseNumber = Convert.ToInt32(Add_CustomerHouseNumber);
+            newCustomer.CustomerHouseNumber = Convert.ToInt32(inputHouseNumber);
             newCustomer.CustomerAddress = inputStreetName;
             newCustomer.CustomerPostcode = inputPostCode;
             newCustomer.CustomerCity = inputCity;
