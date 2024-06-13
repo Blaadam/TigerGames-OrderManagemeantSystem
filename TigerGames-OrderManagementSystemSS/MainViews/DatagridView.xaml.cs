@@ -213,7 +213,7 @@ namespace TigerGames_OrderManagementSystemSS.MainViews
                 return;
             }
 
-            if (MessageBox.Show($"Are you sure you want to remove CategoryID: {EntryID} from the {CurrentTable} Database?", "Remove Category", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+            if (MessageBox.Show($"Are you sure you want to remove {CurrentTable}ID: {EntryID} from the {CurrentTable} Database?", "Remove Category", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
             {
                 return;
             }
