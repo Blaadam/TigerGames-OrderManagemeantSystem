@@ -55,7 +55,7 @@ namespace TigerGames_OrderManagementSystemSS
 #if DEBUG
                     LoadingProgressBar.Value += 1;
 #else
-                    LoadingProgressBar.Value += 0.4;
+                    LoadingProgressBar.Value += 0.2;
 #endif
                 }
                 else
